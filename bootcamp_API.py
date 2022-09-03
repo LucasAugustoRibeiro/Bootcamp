@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 from PIL import Image
-image = Image.open('banner.jpeg')
+image = Image.open('banner.jpg')
 
 st.image(image,
       use_column_width=True)
@@ -19,8 +19,7 @@ st.image(image,
 
 def predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,Viscera_weight,Shell_weight):
     input=np.array([[Length,Diameter,Height,Whole_weight,Shucked_weight,Viscera_weight,Shell_weight]]).astype(np.float64)
-    prediction = 3
-    #pred = '{0:.{1}f}'.format(prediction[0][0], 2)
+    prediction = "3"
     return int(prediction)
 
 
