@@ -15,14 +15,13 @@ st.set_page_config(
 from PIL import Image
 image = Image.open('banner.jpg')
 
-st.image(image,
-      use_column_width=True)
+st.image(image, use_column_width=True)
 
 
 def predict_age(ID_Cliente):
     predict = df.loc[df["ID_Cliente"]==ID_Cliente]
-    prediction = predict["Metrica"]
-    return prediction
+    prediction = predict["Minimo"]
+    return int(prediction)
 
 
 def main():
@@ -54,7 +53,7 @@ def main():
         output = predict_age(ID_Cliente)
         st.success('O crédito concedido ao cliente é: {}'.format(output))
 
-        if output == "Reprovado":
+        if output == 0:
             st.markdown(danger_html,unsafe_allow_html=True)
         else:
             st.markdown(warn_html,unsafe_allow_html=True)
