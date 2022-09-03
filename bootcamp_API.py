@@ -55,7 +55,7 @@ def main():
     """
 
     if st.button("Predição de crédito"):
-        output = predict_age(ID_Cliente)[0]
+        output = str(predict_age(ID_Cliente)[0])
         minimo = predict_minimo(ID_Cliente)[0]
         st.success('O crédito concedido ao cliente é: {}'.format(minimo))
  
