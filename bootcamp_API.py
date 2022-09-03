@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 from PIL import Image
-image = Image.open('banner.jpg')
+image = Image.open('banner2.png')
 
 st.image(image, use_column_width=True)
 
