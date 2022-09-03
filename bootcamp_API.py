@@ -26,7 +26,7 @@ def predict_age(ID_Cliente):
 def predict_minimo(ID_Cliente):
     predict = df.loc[df["ID_Cliente"]==ID_Cliente]
     prediction = predict["Minimo"]
-    return prediction.values
+    return prediction
 
 
 def main():
