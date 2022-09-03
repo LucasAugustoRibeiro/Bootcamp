@@ -43,7 +43,7 @@ def main():
     </div>
     """
     if st.button("Predict the age"):
-    output = predict_age(Length,Diameter,Height,Whole_weight,
+        output = predict_age(Length,Diameter,Height,Whole_weight,
                         Shucked_weight,Viscera_weight,Shell_weight)
     st.success('The age is {}'.format(output))
 
