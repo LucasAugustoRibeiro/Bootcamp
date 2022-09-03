@@ -32,6 +32,8 @@ def main():
     """
     st.markdown(html_temp, unsafe_allow_html = True)
 
+
+    ID_Cliente = st.text_input("ID do Cliente")
     maiorAtraso = st.text_input("Maior atraso")
     margemBrutaAcumulada = st.text_input("Margem Bruta Acm.")
     percentualProtestos = st.text_input("Percentual de protestos (%)")
@@ -57,32 +59,25 @@ def main():
     empresa_MeEppMei_True = st.text_input("É ME EPP Mei? (1 = Sim | 0 = Não)")
 
 
-    safe_html ="""  
-      <div style="background-color:#80ff80; padding:10px >
-      <h2 style="color:white;text-align:center;"> The Abalone is young</h2>
-      </div>
-    """
     warn_html ="""  
-      <div style="background-color:#F4D03F; padding:10px >
-      <h2 style="color:white;text-align:center;"> The Abalone is middle aged</h2>
+      <div style="background-color:#80ff80; padding:10px >
+      <h2 style="color:white;text-align:center;"> Cliente Aprovado</h2>
       </div>
     """
     reprovado_html="""  
       <div style="background-color:#F08080; padding:10px >
-       <h2 style="color:black ;text-align:center;"> Cliente reprivado</h2>
+       <h2 style="color:black ;text-align:center;"> Cliente reprovado</h2>
        </div>
     """
 
-    if st.button("Predict the age"):
+    if st.button("Predição de crédito"):
         output = predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,Viscera_weight,Shell_weight)
         st.success('O crédito concedido ao cliente é de: R$ {}'.format(output))
 
-        if output == 1:
-            st.markdown(safe_html,unsafe_allow_html=True)
-        elif output == 2:
-            st.markdown(warn_html,unsafe_allow_html=True)
-        elif output == 3:
+        if output == 0:
             st.markdown(danger_html,unsafe_allow_html=True)
+        else:
+            st.markdown(warn_html,unsafe_allow_html=True)
 
 if __name__=='__main__':
     main()
