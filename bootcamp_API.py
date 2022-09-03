@@ -4,8 +4,8 @@ import numpy as np
 import pickle
 import altair as alt
 
-file_name = "xgb_reg.pkl"
-xgb_aprovado = pickle.load(open('Modelos\\xgb_aprovado.pkl', "rb"))
+
+xgb_aprovado = pickle.load(open('xgb_aprovado.pkl', "rb"))
 xgb_credito = pickle.load(open('Modelos\\xgb_credito.pkl', "rb"))
 
 
