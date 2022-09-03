@@ -21,12 +21,12 @@ st.image(image, use_column_width=True)
 def predict_age(ID_Cliente):
     predict = df.loc[df["ID_Cliente"]==ID_Cliente]
     prediction = predict["Aprovado"]
-    return prediction.values
+    return prediction
 
 def predict_minimo(ID_Cliente):
     predict = df.loc[df["ID_Cliente"]==ID_Cliente]
     prediction = predict["Minimo"]
-    return prediction
+    return prediction.values
 
 
 def main():
@@ -58,7 +58,7 @@ def main():
         output = predict_age(ID_Cliente)
         minimo = predict_minimo(ID_Cliente)
         st.success('O crédito concedido ao cliente é: {}'.format(minimo))
-
+ 
         if output == "B":
             st.markdown(reprovado_html,unsafe_allow_html=True)
         else:
