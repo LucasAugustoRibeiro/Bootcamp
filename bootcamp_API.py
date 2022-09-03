@@ -52,7 +52,7 @@ def main():
 
     if st.button("Predição de crédito"):
         output = predict_age(ID_Cliente)
-        st.success('O crédito concedido ao cliente é: {}'.predict_age(ID_Cliente))
+        st.success('O crédito concedido ao cliente é: {}'.format(predict_age(ID_Cliente)))
 
         if output == "Reprovado":
             st.markdown(danger_html,unsafe_allow_html=True)
