@@ -28,4 +28,20 @@ st.set_page_config(
 )
 
 
+st.write(
+    """
+# 📊 A/B Testing App
+Upload your experiment results to see the significance of your A/B test.
+"""
+)
+
+uploaded_file = st.file_uploader("Upload CSV", type=".csv")
+
+use_example_file = st.checkbox(
+    "Use example file", False, help="Use in-built example file to demo the app"
+)
+
+ab_default = None
+result_default = None
+
 print("OK")
