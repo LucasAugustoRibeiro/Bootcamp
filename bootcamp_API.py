@@ -30,7 +30,7 @@ def predict_minimo(ID_Cliente):
 
 
 def main():
-    #st.title("Abalone Age Prediction")
+    #st.title("Predição de crédito")
     html_temp = """
     <div style="background:#025246 ;padding:10px">
     <h2 style="color:white;text-align:center;">Predição de crédito ao cliente </h2>
