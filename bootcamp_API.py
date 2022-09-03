@@ -1,3 +1,4 @@
+import streamlit as st
 import pickle
 import numpy as np
 
@@ -15,4 +16,11 @@ def predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,
     
     return int(prediction)
 
-
+def main():
+    st.title("Abalone Age Prediction")
+    html_temp = """
+    <div style="background:#025246 ;padding:10px">
+    <h2 style="color:white;text-align:center;"> Abalone Age Prediction ML App </h2>
+    </div>
+    """
+    st.markdown(html_temp, unsafe_allow_html = True)
