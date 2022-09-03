@@ -12,13 +12,13 @@ xgb_credito = pickle.load(open('Modelos\\xgb_credito.pkl', "rb"))
 
 
 
-def predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,
+'''def predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,
                 Viscera_weight,Shell_weight):
     input=np.array([[Length,Diameter,Height,Whole_weight,Shucked_weight,
                      Viscera_weight,Shell_weight]]).astype(np.float64)
     prediction = xgb_aprovado.predict(input)
     
-    return int(prediction)
+    return int(prediction)'''
 
 
 
