@@ -19,7 +19,7 @@ st.image(image,
 
 def predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,Viscera_weight,Shell_weight):
     input=np.array([[Length,Diameter,Height,Whole_weight,Shucked_weight,Viscera_weight,Shell_weight]]).astype(np.float64)
-    prediction = "3"
+    prediction = "1"
     return int(prediction)
 
 
