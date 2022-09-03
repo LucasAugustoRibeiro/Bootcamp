@@ -21,13 +21,7 @@ def predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,
     return int(prediction)
 
 
-st.title("Abalone Age Prediction")
-html_temp = """
-<div style="background:#025246 ;padding:10px">
-<h2 style="color:white;text-align:center;"> Abalone Age Prediction ML App </h2>
-</div>
-"""
-st.markdown(html_temp, unsafe_allow_html = True)
+
 
 st.set_page_config(
     page_title="A/B Test Comparison", page_icon="📈", initial_sidebar_state="expanded"
