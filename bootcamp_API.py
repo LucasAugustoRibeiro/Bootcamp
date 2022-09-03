@@ -38,7 +38,7 @@ def main():
     valorSolicitado = st.text_input("Valor de crédito solicitado")
 
 
-    warn_html ="""  
+    aprovado_html ="""  
       <div style="background-color:#80ff80; padding:10px >
       <h2 style="color:white;text-align:center;"> Cliente Aprovado</h2>
       </div>
@@ -56,7 +56,7 @@ def main():
         if output == 0:
             st.markdown(reprovado_html,unsafe_allow_html=True)
         else:
-            st.markdown(warn_html,unsafe_allow_html=True)
+            st.markdown(aprovado_html,unsafe_allow_html=True)
 
 if __name__=='__main__':
     main()
