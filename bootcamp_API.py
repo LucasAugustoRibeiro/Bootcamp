@@ -58,7 +58,7 @@ def main():
         output = predict_age(ID_Cliente)
         output = output
         minimo = predict_minimo(ID_Cliente)
-        minimo = minimo
+        minimo = minimo[0]
         st.success('O crédito concedido ao cliente é: {}'.format(minimo))
  
         if output == "B":
