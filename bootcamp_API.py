@@ -3,8 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle
 import altair as alt
-import sklearn
-from sklearn.ensemble import GradientBoostingClassifier
+
 
 xgb_aprovado = pickle.load(open('xgb_aprovado.pkl', "rb"))
 xgb_credito = pickle.load(open('Modelos\\xgb_credito.pkl', "rb"))
