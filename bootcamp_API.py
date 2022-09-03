@@ -1,11 +1,15 @@
 import streamlit as st
-import pickle
+import pandas as pd
 import numpy as np
+import pickle
+import scipy.stats
+from scipy.stats import norm
+import altair as alt
 
 file_name = "xgb_reg.pkl"
 xgb_aprovado = pickle.load(open('Modelos\\xgb_aprovado.pkl', "rb"))
 xgb_credito = pickle.load(open('Modelos\\xgb_credito.pkl', "rb"))
-print("OK")
+
 
 
 def predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,
@@ -24,3 +28,6 @@ def main():
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html = True)
+
+
+print("OK")
