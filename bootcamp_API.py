@@ -51,7 +51,7 @@ def main():
     """
 
     if st.button("Predição de crédito"):
-        output = predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,Viscera_weight,Shell_weight)
+        output = predict_age(ID_Cliente)
         st.success('O crédito concedido ao cliente é de: R$ {}'.format(output))
 
         if output == 0:
