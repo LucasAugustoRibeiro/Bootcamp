@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
-import scipy.stats
-from scipy.stats import norm
 import altair as alt
 
 file_name = "xgb_reg.pkl"
