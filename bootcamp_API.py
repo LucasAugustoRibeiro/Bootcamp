@@ -1,7 +1,9 @@
 import streamlit as st
 import pickle
 import numpy as np
+import pandas as pd
 
+df = pd.read_csv('Database\\Base_Clientes.csv')
 
 st.set_page_config(
     page_title="Prediction App",
@@ -17,9 +19,9 @@ st.image(image,
       use_column_width=True)
 
 
-def predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,Viscera_weight,Shell_weight):
-    input=np.array([[Length,Diameter,Height,Whole_weight,Shucked_weight,Viscera_weight,Shell_weight]]).astype(np.float64)
-    prediction = "1"
+def predict_age(ID_Cliente):
+    predict = df.loc[df["ID_Cliente"]==ID_Cliente]
+    prediction = predict["Metrica"]
     return int(prediction)
 
 
