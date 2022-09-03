@@ -67,15 +67,15 @@ def main():
       <h2 style="color:white;text-align:center;"> The Abalone is middle aged</h2>
       </div>
     """
-    danger_html="""  
+    reprovado_html="""  
       <div style="background-color:#F08080; padding:10px >
-       <h2 style="color:black ;text-align:center;"> The Abalone is old</h2>
+       <h2 style="color:black ;text-align:center;"> Cliente reprivado</h2>
        </div>
     """
 
     if st.button("Predict the age"):
         output = predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,Viscera_weight,Shell_weight)
-        st.success('The age is {}'.format(output))
+        st.success('O crédito concedido ao cliente é de: R$ {}'.format(output))
 
         if output == 1:
             st.markdown(safe_html,unsafe_allow_html=True)
