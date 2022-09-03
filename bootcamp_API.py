@@ -53,7 +53,7 @@ def main():
         output = predict_age(ID_Cliente)
         st.success('O crédito concedido ao cliente é: {}'.format(output))
 
-        if output == 0:
+        if output == "B":
             st.markdown(reprovado_html,unsafe_allow_html=True)
         else:
             st.markdown(aprovado_html,unsafe_allow_html=True)
