@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv('Database\\Base_Clientes.csv')
+df = pd.read_csv('Database/Base_Clientes.csv')
 
 st.set_page_config(
     page_title="Prediction App",
