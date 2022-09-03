@@ -23,6 +23,11 @@ def predict_age(ID_Cliente):
     prediction = predict["Aprovado"]
     return prediction.values
 
+def predict_minimo(ID_Cliente):
+    predict = df.loc[df["ID_Cliente"]==ID_Cliente]
+    prediction = predict["Minimo"]
+    return prediction.values
+
 
 def main():
     #st.title("Abalone Age Prediction")
@@ -51,7 +56,8 @@ def main():
 
     if st.button("Predição de crédito"):
         output = predict_age(ID_Cliente)
-        st.success('O crédito concedido ao cliente é: {}'.format(output))
+        minimo = predict_minimo(ID_Cliente)
+        st.success('O crédito concedido ao cliente é: {}'.format(minimo))
 
         if output == "B":
             st.markdown(reprovado_html,unsafe_allow_html=True)
