@@ -15,7 +15,7 @@ st.set_page_config(
 from PIL import Image
 image = Image.open('banner2.png')
 
-st.image(image, use_column_width=True)
+st.image(image, use_column_width=False)
 
 
 def predict_age(ID_Cliente):
