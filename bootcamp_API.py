@@ -19,12 +19,12 @@ st.image(image, use_column_width=True)
 
 
 def predict_age(ID_Cliente):
-    predict = df.loc[df["ID_Cliente"]==ID_Cliente]
+    predict = df.loc[df["ID_Cliente"]==int(ID_Cliente)]
     prediction = predict["Aprovado"]
     return prediction.values
 
 def predict_minimo(ID_Cliente):
-    predict = df.loc[df["ID_Cliente"]==ID_Cliente]
+    predict = df.loc[df["ID_Cliente"]==int(ID_Cliente)]
     prediction = predict["Minimo"]
     return prediction.values
 
