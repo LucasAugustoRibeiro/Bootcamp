@@ -22,7 +22,7 @@ st.image(image,
 def predict_age(ID_Cliente):
     predict = df.loc[df["ID_Cliente"]==ID_Cliente]
     prediction = predict["Metrica"]
-    return int(prediction)
+    return prediction
 
 
 def main():
@@ -54,7 +54,7 @@ def main():
         output = predict_age(ID_Cliente)
         st.success('O crédito concedido ao cliente é de: R$ {}'.format(output))
 
-        if output == 0:
+        if output == "Reprovado":
             st.markdown(danger_html,unsafe_allow_html=True)
         else:
             st.markdown(warn_html,unsafe_allow_html=True)
