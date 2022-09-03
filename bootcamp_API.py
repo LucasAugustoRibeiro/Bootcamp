@@ -54,7 +54,7 @@ def main():
         st.success('O crédito concedido ao cliente é: {}'.format(output))
 
         if output == 0:
-            st.markdown(danger_html,unsafe_allow_html=True)
+            st.markdown(reprovado_html,unsafe_allow_html=True)
         else:
             st.markdown(warn_html,unsafe_allow_html=True)
 
