@@ -27,7 +27,7 @@ def main():
     #st.title("Abalone Age Prediction")
     html_temp = """
     <div style="background:#025246 ;padding:10px">
-    <h2 style="color:white;text-align:center;">Abalone Age Prediction ML App </h2>
+    <h2 style="color:white;text-align:center;">Predição de crédito ao cliente </h2>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html = True)
