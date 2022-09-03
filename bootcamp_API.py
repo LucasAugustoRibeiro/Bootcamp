@@ -19,27 +19,40 @@ def predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,
     return int(prediction)
 
 
-
-
-st.set_page_config(
-    page_title="A/B Test Comparison", page_icon="📈", initial_sidebar_state="expanded"
-)
-
-
-st.write(
+def main():
+    st.title("Abalone Age Prediction")
+    html_temp = """
+    <div style="background:#025246 ;padding:10px">
+    <h2 style="color:white;text-align:center;"> Abalone Age Prediction ML App </h2>
+    </div>
     """
-# 📊 A/B Testing App
-Upload your experiment results to see the significance of your A/B test.
-"""
-)
+    st.markdown(html_temp, unsafe_allow_html = True)
+    
+    
+    Length = st.text_input("Length","Type Here")
+    Diameter = st.text_input("Diameter","Type Here")
+    Height = st.text_input("Height","Type Here")
+    Whole_weight = st.text_input("Whole weight","Type Here")
+    Shucked_weight = st.text_input("Shucked weight","Type Here")
+    Viscera_weight = st.text_input("Viscera weight","Type Here")
+    Shell_weight = st.text_input("Shell weight","Type Here")
 
-uploaded_file = st.file_uploader("Upload CSV", type=".csv")
+    safe_html ="""  
+    <div style="background-color:#80ff80; padding:10px >
+    <h2 style="color:white;text-align:center;"> The Abalone is young</h2>
+    </div>
+    """
+    if st.button("Predict the age"):
+    output = predict_age(Length,Diameter,Height,Whole_weight,
+                        Shucked_weight,Viscera_weight,Shell_weight)
+    st.success('The age is {}'.format(output))
 
-use_example_file = st.checkbox(
-    "Use example file", False, help="Use in-built example file to demo the app"
-)
+    if output == 1:
+        st.markdown(safe_html,unsafe_allow_html=True)
+    elif output == 2:
+        st.markdown(warn_html,unsafe_allow_html=True)
+    elif output == 3:
+        st.markdown(danger_html,unsafe_allow_html=True)
 
-ab_default = None
-result_default = None
-
-print("OK")
+if __name__=='__main__':
+    main()
