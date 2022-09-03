@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
-model = pickle.load(open('final_model.pkl','rb'))
+#model = pickle.load(open('final_model.pkl','rb'))
 
 
 
@@ -21,7 +21,8 @@ st.image(image,
 
 def predict_age(Length,Diameter,Height,Whole_weight,Shucked_weight,Viscera_weight,Shell_weight):
     input=np.array([[Length,Diameter,Height,Whole_weight,Shucked_weight,Viscera_weight,Shell_weight]]).astype(np.float64)
-    prediction = model.predict(input)
+    prediction = 3
+    #prediction = model.predict(input)
     #pred = '{0:.{1}f}'.format(prediction[0][0], 2)
     return int(prediction)
 
